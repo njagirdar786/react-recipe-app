@@ -11,7 +11,7 @@ function WeatherDetails({ data }) {
           <div className="stats stats-vertical lg:stats-horizontal shadow">
             <div className="stat">
               <div className="stat-title">Humidity</div>
-              <div className="stat-value">{data.current.humidity}</div>
+              <div className="stat-value">{data.current.humidity}%</div>
             </div>
 
             <div className="stat">
@@ -42,6 +42,11 @@ function WeatherDetails({ data }) {
             <div className="stat">
               <div className="stat-title">Feels Like</div>
               <div className="stat-value">{data.current.feelslike_c}°</div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-title">Visibility</div>
+              <div className="stat-value">{data.current?.vis_miles} mi</div>
             </div>
           </div>
         </div>
