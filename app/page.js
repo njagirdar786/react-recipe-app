@@ -10,21 +10,19 @@ export default function Home() {
   const [location, setLocation] = useState("Leeds");
   const [weather, setWeather] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await fetch(`/api/weather?location=${location}`, {
-  //       headers: {
-  //         Accept: "application/json",
-  //         method: "GET",
-  //       },
-  //     });
-  //     const data = await response.json();
-  //     console.log(data);
-  //     setWeather(data);
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+      const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=no&alerts=no`;
 
-  //   fetchData();
-  // }, [location]);
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      setWeather(data);
+    };
+
+    fetchData();
+  }, [location]);
 
   return (
     <>
