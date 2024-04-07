@@ -7,18 +7,42 @@ function WeatherDetails({ data }) {
     <>
       <div className="card bg-gradient-to-br from-cyan-300 to-gray-900">
         <div className="card-body">
-          <h2 className="card-title">Today's Highlights</h2>
-          <div className="flex justify-between">
-            <span>Humidity</span>
-            <span>84%</span>
+          <h2 className="card-title">Weather Details</h2>
+          <div className="stats stats-vertical lg:stats-horizontal shadow">
+            <div className="stat">
+              <div className="stat-title">Humidity</div>
+              <div className="stat-value">{data.current.humidity}</div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-title">Wind Speed</div>
+              <div className="stat-value">{data.current.wind_mph} mph</div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-title">Wind Direction</div>
+              <div className="stat-value">{data.current.wind_dir}</div>
+            </div>
           </div>
-          <div className="flex justify-between">
-            <span>Humidity</span>
-            <span>84%</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Humidity</span>
-            <span>84%</span>
+          <div className="stats stats-vertical lg:stats-horizontal shadow">
+            <div className="stat">
+              <div className="stat-title">Sunrise</div>
+              <div className="stat-value">
+                {data.forecast.forecastday[0].astro.sunrise}
+              </div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-title">Sunset</div>
+              <div className="stat-value">
+                {data.forecast.forecastday[0].astro.sunset}
+              </div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-title">Feels Like</div>
+              <div className="stat-value">{data.current.feelslike_c}°</div>
+            </div>
           </div>
         </div>
       </div>
