@@ -41,7 +41,7 @@ function WeatherDetails({ data }) {
 
             <div className="stat">
               <div className="stat-title">Feels Like</div>
-              <div className="stat-value">{data.current.feelslike_c}°</div>
+              <div className="stat-value">{data.current.feelslike_c}°C</div>
             </div>
 
             <div className="stat">
