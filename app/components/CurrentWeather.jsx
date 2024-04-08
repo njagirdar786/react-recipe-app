@@ -1,8 +1,6 @@
 import React from "react";
 
 function CurrentWeather({ data }) {
-  let iconUrl = "https:" + data.current.condition.icon;
-
   return (
     <>
       <div className="card bg-gradient-to-br from-purple-500 to-gray-900">
@@ -17,7 +15,7 @@ function CurrentWeather({ data }) {
               <p className="stat-value">{data.current.temp_c}°C</p>
               <div className="kbd bg-gradient-to-br from-pink-500 to-gray-900">
                 <img
-                  src={iconUrl}
+                  src={"https" + data.current.condition.icon}
                   alt="icon"
                   height="40"
                   width="40"
