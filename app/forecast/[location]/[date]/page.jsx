@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 function page({ params }) {
   const [dayData, setDayData] = useState(null);
@@ -24,10 +25,14 @@ function page({ params }) {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col items-center p-4 bg-black text-white min-h-screen">
       {dayData && (
         <div>
           <h1>Forecast for {dayData.date}</h1>
+
+          <Link className="btn" href={"/"}>
+            Go Back
+          </Link>
         </div>
       )}
     </div>

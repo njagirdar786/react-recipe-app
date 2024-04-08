@@ -14,9 +14,9 @@ const ForecastCard = ({ day, location }) => {
             width="40"
           />
         </div>
-        <div className="btn">
-          <Link href={`/forecast/${location}/${day.date}`}>View More</Link>
-        </div>
+        <Link className="btn" href={`/forecast/${location}/${day.date}`}>
+          View More
+        </Link>
       </div>
     </div>
   );
