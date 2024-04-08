@@ -9,7 +9,11 @@ function WeatherForecast({ data }) {
           <h2 className="card-title">3 Days Forecast</h2>
           <div className="flex justify-around">
             {data.forecast.forecastday.map((day) => (
-              <ForecastCard key={day.date} day={day} />
+              <ForecastCard
+                key={day.date}
+                day={day}
+                location={data.location.name}
+              />
             ))}
           </div>
         </div>

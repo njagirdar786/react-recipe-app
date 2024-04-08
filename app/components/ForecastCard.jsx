@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const ForecastCard = ({ day }) => {
+const ForecastCard = ({ day, location }) => {
   return (
     <div className="stats">
       <div className="stat">
@@ -15,7 +15,7 @@ const ForecastCard = ({ day }) => {
           />
         </div>
         <div className="btn">
-          <Link href={`/forecast/${day.date}`}>View More</Link>
+          <Link href={`/forecast/${location}/${day.date}`}>View More</Link>
         </div>
       </div>
     </div>
