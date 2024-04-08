@@ -14,7 +14,7 @@ function CurrentWeather({ data }) {
                 {data.location.name}, {data.location.region}
               </h2>
               <h2 className="stat-title">{data.location.tz_id}</h2>
-              <p>{data.current.temp_c}°C</p>
+              <p className="stat-value">{data.current.temp_c}°C</p>
               <div className="kbd bg-gradient-to-br from-pink-500 to-gray-900">
                 <img
                   src={iconUrl}

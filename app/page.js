@@ -33,7 +33,8 @@ export default function Home() {
           <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <CurrentWeather data={weather} />
             <WeatherDetails data={weather} />
-            <WeatherForecast />
+            <WeatherForecast data={weather} />
+            {/* <div>{weather.forecast.forecastday[0].day.condition.text}</div> */}
           </div>
         )}
       </div>
